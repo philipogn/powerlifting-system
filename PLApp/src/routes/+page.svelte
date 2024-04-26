@@ -1,2 +1,12 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+    import { onMount } from 'svelte';
+    import { page } from '$app/stores';
+    import {goto} from '$app/navigation';
+</script>
+
+<main>
+    <div class="container">
+        <h1><a href="/home">Home</a></h1>
+        <h2><a href="/calculation">Calculation Tool</a></h2>
+    </div>
+</main>
