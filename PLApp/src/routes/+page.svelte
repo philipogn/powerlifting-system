@@ -6,7 +6,7 @@
 
 <main>
     <div class="container">
-        <h1><a href="/home">Home</a></h1>
-        <h2><a href="/calculation">Calculation Tool</a></h2>
+        <h1>Welcome to AUWC Tool</h1>
+            <p>Use this tool to calculate your warm up sets for your work set.</p>
     </div>
 </main>
