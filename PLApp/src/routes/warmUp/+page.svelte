@@ -7,18 +7,26 @@
     const rep5 = 0.6;
     const rep3 = 0.75;
     const rep1 = 0.9;
+    let weight5 = 0;
+    let weight3 = 0;
+    let weight1 = 0;
 
-    function warmUp5(weight) {
-        return weight * rep5;
+    function roundingQuarter() { // round to nearest 2.5
+        weight5 = 2.5 * Math.ceil(weight5/2.5);
+        weight3 = 2.5 * Math.ceil(weight3/2.5);
+        weight1 = 2.5 * Math.ceil(weight1/2.5);
     }
 
-    function warmUp3(weight) {
-        return weight * rep3;
+    function warmUpCalc(weight) {
+        weight5 = weight * rep5;
+        weight3 = weight * rep3;
+        weight1 = weight * rep1;
+        roundingQuarter();
     }
 
-    function warmUp1(weight) {
-        return weight * rep1;
-    }
+    // function warmUpWeight(weight) {
+    //     warmUpCalc(weight);
+    // }
     // Your first warm up set should be done with 60% of your work set for 5 reps. 
     // Second should be done with 75-80% of your work set for 3 reps
     // final warm up set should be done with 90% for 1 rep.
@@ -33,13 +41,13 @@
                 <label for="weight">Weight</label>
                 <input type="number" id="weight" bind:value={weight} />
             </div>
-            <button on:click={warmUpWeight(weight)}>Submit</button>
+            <button on:click={warmUpCalc(weight)}>Submit</button>
         </div>
         <div class="right">
             <h2>Warm Up Sets</h2>
-            <p>5 Reps: {warmUp5(weight)}</p>
-            <p>3 Reps: {warmUp3(weight)}</p>
-            <p>1 Rep: {warmUp1(weight)}</p>
+            <p>5 Reps: {weight5}</p>
+            <p>3 Reps: {weight3}</p>
+            <p>1 Rep: {weight1}</p>
         </div>
     </div>
 </main>
