@@ -1,9 +1,9 @@
-<script>
+<script lang="ts">
     // import { onMount } from 'svelte';
     // import { page } from '$app/stores';
     // import {goto} from '$app/navigation';
 
-    let weight = 0;
+    let weight:number = 0;
     const rep5 = 0.6;
     const rep3 = 0.75;
     const rep1 = 0.9;
@@ -17,7 +17,7 @@
         weight1 = 2.5 * Math.round(weight1/2.5);
     }
 
-    function warmUpCalc(weight) {
+    function warmUpCalc(weight: number) {
         weight5 = weight * rep5;
         weight3 = weight * rep3;
         weight1 = weight * rep1;
@@ -42,7 +42,7 @@
                 <label for="weight">Weight</label>
                 <input type="number" id="weight" bind:value={weight} />
             </div>
-            <button on:click={warmUpCalc(weight)}>Submit</button>
+            <button on:click={() => warmUpCalc(weight)}>Submit</button>
         </div>
 
         <div class="right">
