@@ -1,7 +1,4 @@
 <script lang="ts">
-    // import { onMount } from 'svelte';
-    // import { page } from '$app/stores';
-    // import {goto} from '$app/navigation';
 
     let weight:number = 0;
     const rep5 = 0.6;
@@ -24,12 +21,7 @@
         roundingQuarter();
     }
 
-    // function warmUpWeight(weight) {
-    //     warmUpCalc(weight);
-    // }
-    // Your first warm up set should be done with 60% of your work set for 5 reps. 
-    // Second should be done with 75-80% of your work set for 3 reps
-    // final warm up set should be done with 90% for 1 rep.
+    // 1rm = weight / ( 1.0278 - 0.0278 × reps )
     
 </script>
 
@@ -38,8 +30,8 @@
 
         <div class="left">
             <h1>Warm Up</h1>
-            <div class="warm-up-weight">
-                <label for="weight">Weight</label>
+            <label for="weight">Weight (KGs)</label>
+            <div class="input">
                 <input type="number" id="weight" bind:value={weight} />
             </div>
             <button on:click={() => warmUpCalc(weight)}>Submit</button>
@@ -65,7 +57,7 @@
     }
 
     .left {
-        flex: 1;
+        flex: 1; /*split the container into 2 equal parts*/
         display: flex;
         justify-content: left;
         align-items: center;
@@ -73,14 +65,14 @@
     }
 
     .right {
-        flex: 1;
+        flex: 1; /*split the container into 2 equal parts*/
         display: flex;
         justify-content: right;
         align-items: center;
         flex-direction: column;
     }
 
-    .warm-up-weight {
+    .input {
         display: flex;
         justify-content: center;
         align-items: center;
