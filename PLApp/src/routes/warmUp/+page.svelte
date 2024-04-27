@@ -12,9 +12,9 @@
     let weight1 = 0;
 
     function roundingQuarter() { // round to nearest 2.5
-        weight5 = 2.5 * Math.ceil(weight5/2.5);
-        weight3 = 2.5 * Math.ceil(weight3/2.5);
-        weight1 = 2.5 * Math.ceil(weight1/2.5);
+        weight5 = 2.5 * Math.round(weight5/2.5);
+        weight3 = 2.5 * Math.round(weight3/2.5);
+        weight1 = 2.5 * Math.round(weight1/2.5);
     }
 
     function warmUpCalc(weight) {
@@ -35,20 +35,23 @@
 
 <main>
     <div class="container">
-        <h1>Warm Up</h1>
+
         <div class="left">
-            <div class="warm-up__weight">
+            <h1>Warm Up</h1>
+            <div class="warm-up-weight">
                 <label for="weight">Weight</label>
                 <input type="number" id="weight" bind:value={weight} />
             </div>
             <button on:click={warmUpCalc(weight)}>Submit</button>
         </div>
+
         <div class="right">
             <h2>Warm Up Sets</h2>
             <p>5 Reps: {weight5}</p>
             <p>3 Reps: {weight3}</p>
             <p>1 Rep: {weight1}</p>
         </div>
+
     </div>
 </main>
 
@@ -56,26 +59,28 @@
 <style>
     .container {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        flex-direction: column;
+        margin: 0 auto; /*auto centers the container*/
     }
 
     .left {
+        flex: 1;
         display: flex;
-        justify-content: center;
+        justify-content: left;
         align-items: center;
         flex-direction: column;
     }
 
     .right {
+        flex: 1;
         display: flex;
-        justify-content: center;
+        justify-content: right;
         align-items: center;
         flex-direction: column;
     }
 
-    .warm-up__weight {
+    .warm-up-weight {
         display: flex;
         justify-content: center;
         align-items: center;
