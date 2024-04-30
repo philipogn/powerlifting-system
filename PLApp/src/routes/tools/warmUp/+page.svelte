@@ -1,12 +1,14 @@
 <script lang="ts">
 
     let weight:number = 0;
+    let reps:number = 0;
     const rep5 = 0.6;
     const rep3 = 0.75;
     const rep1 = 0.9;
     let weight5 = 0;
     let weight3 = 0;
     let weight1 = 0;
+    let oneRepMaxWeight = 0;
 
     function roundingQuarter() { // round to nearest 2.5
         weight5 = 2.5 * Math.round(weight5/2.5);
@@ -21,7 +23,11 @@
         roundingQuarter();
     }
 
-    // 1rm = weight / ( 1.0278 - 0.0278 × reps )
+    function oneRepMax(weight: number, reps: number) {
+        // 1rm = weight / ( 1.0278 - 0.0278 × reps )
+        oneRepMaxWeight = weight / (1.0278 - 0.0287 * reps);
+    }
+
     
 </script>
 

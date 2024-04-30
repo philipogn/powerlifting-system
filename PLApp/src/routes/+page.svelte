@@ -6,7 +6,7 @@
 
 <main>
     <div class="container">
-        <h1>Welcome to AUWC Tool</h1>
-            <p>Use this tool to calculate your warm up sets for your work set.</p>
+        <h1>Welcome to some useful tool for your gym experience</h1>
+            <p>Use this tool to calculate your warm up sets for your work set, or your one rep max.</p>
     </div>
 </main>
