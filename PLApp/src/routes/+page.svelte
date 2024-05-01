@@ -10,3 +10,13 @@
             <p>Use this tool to calculate your warm up sets for your work set, or your one rep max.</p>
     </div>
 </main>
+
+<style>
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 0 auto; /*auto centers the container*/
+    }
+</style>

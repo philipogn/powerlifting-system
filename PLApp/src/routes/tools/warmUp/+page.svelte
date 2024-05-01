@@ -1,14 +1,12 @@
 <script lang="ts">
 
     let weight:number = 0;
-    let reps:number = 0;
     const rep5 = 0.6;
     const rep3 = 0.75;
     const rep1 = 0.9;
     let weight5 = 0;
     let weight3 = 0;
     let weight1 = 0;
-    let oneRepMaxWeight = 0;
 
     function roundingQuarter() { // round to nearest 2.5
         weight5 = 2.5 * Math.round(weight5/2.5);
@@ -22,12 +20,6 @@
         weight1 = weight * rep1;
         roundingQuarter();
     }
-
-    function oneRepMax(weight: number, reps: number) {
-        // 1rm = weight / ( 1.0278 - 0.0278 × reps )
-        oneRepMaxWeight = weight / (1.0278 - 0.0287 * reps);
-    }
-
     
 </script>
 
@@ -36,10 +28,9 @@
 
         <div class="left">
             <h1>Warm Up</h1>
+            <br>
             <label for="weight">Weight (KGs)</label>
-            <div class="input">
-                <input type="number" id="weight" bind:value={weight} />
-            </div>
+            <input class="input-box" id="weight" bind:value={weight} />
             <button on:click={() => warmUpCalc(weight)}>Submit</button>
         </div>
 
@@ -56,10 +47,12 @@
 
 <style>
     .container {
+        padding: 5%;
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin: 0 auto; /*auto centers the container*/
+
     }
 
     .left {
@@ -78,10 +71,15 @@
         flex-direction: column;
     }
 
-    .input {
+    .input-box {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        padding: 1%;
+        border: 1px solid #ccc; /* add a border around the input box */
+        border-radius: 5px; /* add rounded corners*/
+        /* margin-bottom: 1%; */
+        text-align: left;
     }
 </style>
