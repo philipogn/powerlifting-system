@@ -22,7 +22,7 @@
 <AppBar background="bg-surface-100-800-token">
 	<svelte:fragment slot="lead">
 		<div class="brand">
-			<h1>POWERLIFTING APP</h1>
+			<h1>POWELIFTING APP</h1>
 		</div>
 		</svelte:fragment>
 	<svelte:fragment slot="trail">
